@@ -20,5 +20,7 @@ object FoldleftUse extends App{
 //res5: (Int, java.lang.String) = (8,longest?)
       
      println( List("How","long","is","everyone?").foldLeft(0){ (i, s) => i max s.length } )
+      val what = "awesome"
+  //println(s"string interpolation is ${what.toUpperCase}!")
   
 }

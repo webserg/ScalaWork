@@ -1,9 +1,5 @@
-/**
- * Created by sergiy.doroshenko
- * Date: 4/30/11
- */
 package com.google.webserg.scala
-object QuikeSort {
+object QuikeSort extends App{
 
   def quickSort(values: Array[Int]) : Array[Int] = {
 
@@ -61,6 +57,48 @@ object QuikeSort {
     }
     sort1(0, xs.length - 1);xs
   }
+//  
+//  //java style
+//  def quickSort3(xs: Array[Int]): Array[Int]= {
+//    def swap(a:Array[Int],i: Int, j: Int) : Array[Int]{
+//      val t = xs(i);
+//      xs(i) = xs(j);
+//      xs(j) = t
+//    }
+//    def partitioning(a:Array[Int], pdx:Int, len:Int):Int = {
+//        val p = a(pdx);
+//        val i = pdx + 1;
+//        var j=pdx + 1;
+//        while (j <= len) {
+//            if (a[j] < p) {
+//                swap(a, j, i);
+//                i++;
+//            }
+//            j++;
+//        }
+//        swap(a, pdx, i - 1);
+//        return i - 1;
+//    }
+//    def sort1(a: Array[Int]) : Array[Int]{
+//      if (a.length == 1) a
+//      val pivot = 0
+//      var i = l;
+//      var j = r
+//      while (i <= j) {
+//        while (xs(i) < pivot) i += 1
+//        while (xs(j) > pivot) j -= 1
+//        if (i <= j) {
+//          swap(i, j)
+//          i += 1
+//          j -= 1
+//        }
+//        xs.foreach(print(_));println()
+//      }
+//      if (l < j) sort1(l, j)
+//      if (j < r) sort1(i, r)
+//    }
+//    sort1(0, xs.length - 1);xs
+//  }
 
   //scala style
 
@@ -87,7 +125,7 @@ object QuikeSort {
     }
   }
 
-  def main(args: Array[String]) {
+//  def main(args: Array[String]) {
 
     val arr = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
     arr.foreach(print(_));
@@ -100,6 +138,6 @@ object QuikeSort {
     val arr3 = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
     quickSortScala(arr3).foreach(print(_));println();
     println("=====================")
-  }
+//  }
 
 }

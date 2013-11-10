@@ -8,18 +8,18 @@ object collections {
      // case Nil => list
         case List() => list
     }                                             //> listMatch: (list: List[Any])List[Any]
-    val a = List(1, 2, 3)                         //> a  : List[Int] = List(1, 2, 3)
+    val a = List(1, 2, 4)                         //> a  : List[Int] = List(1, 2, 4)
     val b = List(4, 5, 6)                         //> b  : List[Int] = List(4, 5, 6)
     //println(listMatch(a))
     val k = List(List(1,2),List(1,2),List(1,2))   //> k  : List[List[Int]] = List(List(1, 2), List(1, 2), List(1, 2))
     println(listMatch(k))                         //> List(List(List(1, 2), List(1, 2), List(1, 2)), 0)
     
-    val amap = a map {_ *2}                       //> amap  : List[Int] = List(2, 4, 6)
+    val amap = a map {_ *2}                       //> amap  : List[Int] = List(2, 4, 8)
     
-    val flmap = a flatMap (c=> List(0,c))         //> flmap  : List[Int] = List(0, 1, 0, 2, 0, 3)
+    val flmap = a flatMap (c=> List(0,c))         //> flmap  : List[Int] = List(0, 1, 0, 2, 0, 4)
     val flmapScal = a flatMap(x=>b map (y=>(x,y)))//> flmapScal  : List[(Int, Int)] = List((1,4), (1,5), (1,6), (2,4), (2,5), (2,6
-                                                  //| ), (3,4), (3,5), (3,6))
-    a zip b                                       //> res0: List[(Int, Int)] = List((1,4), (2,5), (3,6))
+                                                  //| ), (4,4), (4,5), (4,6))
+    a zip b                                       //> res0: List[(Int, Int)] = List((1,4), (2,5), (4,6))
     val n =7                                      //> n  : Int = 7
  //   (1 until n) map (i=>(1 until i) map (j=>(i,j)))
    def isPrime(n:Int):Boolean= (2 until n) forall (n % _ != 0)

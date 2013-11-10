@@ -38,5 +38,5 @@ object worksheet {
                                                   //> contains: (s: Int => Boolean, elem: Int)Boolean
   val s = map2(Set(2),f => f * f)                 //> s  : Int => Boolean = <function1>
   contains(s,4)                                   //> res5: Boolean = false
-  map(1, f => f + 4)                              //> res6: Int = 5
+  map(1, f => f + 6)                              //> res6: Int = 7
 }

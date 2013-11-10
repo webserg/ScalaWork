@@ -33,5 +33,5 @@ object worksheet {import scala.runtime.WorksheetSupport._; def main(args: Array[
   def contains(s: Set, elem: Int): Boolean = s(elem);System.out.println("""contains: (s: Int => Boolean, elem: Int)Boolean""");$skip(34); 
   val s = map2(Set(2),f => f * f);System.out.println("""s  : Int => Boolean = """ + $show(s ));$skip(16); val res$5 = 
   contains(s,4);System.out.println("""res5: Boolean = """ + $show(res$5));$skip(21); val res$6 = 
-  map(1, f => f + 4);System.out.println("""res6: Int = """ + $show(res$6))}
+  map(1, f => f + 6);System.out.println("""res6: Int = """ + $show(res$6))}
 }

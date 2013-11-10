@@ -1,4 +1,4 @@
-object collections {import scala.runtime.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(435); 
+object collections {;import org.scalaide.worksheet.runtime.library.WorksheetSupport._; def main(args: Array[String])=$execute{;$skip(435); 
    def listMatch(list :List[Any]):List[Any] = list match{
       case x :: y :: List(xs,ys) ::zs => list :: List(0)
     //  case 5 :: 6 :: xs => list // list starts 1 2
@@ -8,7 +8,7 @@ object collections {import scala.runtime.WorksheetSupport._; def main(args: Arra
      // case Nil => list
         case List() => list
     };System.out.println("""listMatch: (list: List[Any])List[Any]""");$skip(26); 
-    val a = List(1, 2, 3);System.out.println("""a  : List[Int] = """ + $show(a ));$skip(26); 
+    val a = List(1, 2, 4);System.out.println("""a  : List[Int] = """ + $show(a ));$skip(26); 
     val b = List(4, 5, 6);System.out.println("""b  : List[Int] = """ + $show(b ));$skip(76); 
     //println(listMatch(a))
     val k = List(List(1,2),List(1,2),List(1,2));System.out.println("""k  : List[List[Int]] = """ + $show(k ));$skip(26); 

@@ -1,11 +1,11 @@
-package com.google.webserg.scala.coursera.week4
+//package com.google.webserg.scala.coursera.week4
 
 trait Expression
 case class Numb(n: Int) extends Expression
 case class S(e1: Expression, e2: Expression) extends Expression
 //case class SumProvVar(e1: Int, e2: Var) extends Expression
-case class SumProvVar(e1: Any, e2: Var)
 case class Var(x: String) 
+case class SumProvVar(e1: Any, e2: Var)
 case class Prod(e1: Any, e2: Var) 
 
 object ExprMainC extends App {

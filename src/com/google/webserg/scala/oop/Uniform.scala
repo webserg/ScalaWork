@@ -12,5 +12,5 @@ class UniformElement(
                       ) extends Element {
   private val line = ch.toString * width
 
-  def contents = Array.make(height, line)
+  def contents = Array(line)
 }
