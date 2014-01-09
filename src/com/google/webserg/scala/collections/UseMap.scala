@@ -60,4 +60,8 @@ object UseMap extends App{
     import scala.collection.JavaConversions.mapAsScalaMap
     val scores: scala.collection.mutable.Map[String, Int] = new java.util.TreeMap[String, Int]
 
+    val list = List("neo","smith","trinity")
+    val f:String => List[Int] = s=> s.map(_.toInt).toList
+     
+
 }
