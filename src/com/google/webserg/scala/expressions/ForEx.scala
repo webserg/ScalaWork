@@ -1,7 +1,7 @@
 package com.google.webserg.scala.expressions
 
 
-object ForEx extends Application {
+object ForEx extends App {
   def fileLines(file: java.io.File) =
     scala.io.Source.fromFile(file).getLines.toList
 

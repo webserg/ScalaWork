@@ -7,7 +7,7 @@ package com.google.webserg.scala
 
 import ChecksumAccumulator.calculate
 // inherit applications and you don't need write main method
-object FallWinterSpringSummer extends Application {
+object FallWinterSpringSummer extends App {
   for (season <- List("fall", "winter", "spring"))
     println(season + ": " + calculate(season))
 }
