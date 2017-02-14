@@ -22,14 +22,14 @@ i = i + 1;
 }
  */
 
-object Search extends Application {
-  val args = "one" :: "-two.scala" :: "three.scala" :: "scala.c" :: Nil
+object Search extends App {
+  val list = "one" :: "-two.scala" :: "three.scala" :: "scala.c" :: Nil
 
   def searchFrom(i: Int): Int =
-    if (i >= args.length) 1
+    if (i >= list.length) 1
     else if (args(i).startsWith("-"))
       searchFrom(i + 1)
-    else if (args(i).endsWith(".scala")) i
+    else if (list(i).endsWith(".scala")) i
     else searchFrom(i + 1)
 
   val i = searchFrom(0)

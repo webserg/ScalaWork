@@ -6,7 +6,7 @@ package com.google.webserg.scala.expressions
  * Date: 4/2/11 11:34 PM
  */
 
-object ForYield extends Application {
+object ForYield extends App {
   def scalaFiles =
     for {
       file <- filesHere

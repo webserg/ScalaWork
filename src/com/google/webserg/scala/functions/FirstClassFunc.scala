@@ -6,7 +6,7 @@ package com.google.webserg.scala.functions
  * Date: 3/27/11 12:41 AM
  */
 
-object FirstClassFunc extends Application {
+object FirstClassFunc extends App {
   def sum(a: Int, b: Int, c: Int) = a + b + c
 
   val someNumbers = List(11,10, 5,    0, 5, 10)

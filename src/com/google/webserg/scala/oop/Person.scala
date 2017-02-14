@@ -1,5 +1,5 @@
 package com.google.webserg.scala.oop
-import scala.reflect.BeanProperty
+import scala.beans.BeanProperty
 /*
 In Scala, the getter and setter methods are called age and age_=.
 

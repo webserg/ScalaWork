@@ -14,7 +14,7 @@ this case, youre passing in a function literal that takes one parameter named
 arg. The body of the function is println(arg). If
  */
 
-object FunctionLiterals extends Application {
+object FunctionLiterals extends App {
   var increase = (x: Int) => x + 1
   println(increase(10))
   increase = (x: Int) => x + 9999
