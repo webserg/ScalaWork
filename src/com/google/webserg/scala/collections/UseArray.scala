@@ -7,6 +7,7 @@ object UseArray extends App {
   val a = new Array[String](10)// A string array with ten elements, all initialized with null
   val s = Array("Hello", "World")// An Array[String] of size type is inferred Note: No new when you supply initial values
   s(0) = "GoodBay"
+  s.foreach(println)
     
     //java ArrayList equivalent is ArrayBuffer
    import scala.collection.mutable.ArrayBuffer 
