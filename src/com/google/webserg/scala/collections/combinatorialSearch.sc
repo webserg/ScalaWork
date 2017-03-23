@@ -1,3 +1,4 @@
+package com.google.webserg.scala.collections
 object combinatorialSearch {
   def isPrime(n: Int): Boolean = (2 until n) forall (n % _ != 0)
                                                   //> isPrime: (n: Int)Boolean

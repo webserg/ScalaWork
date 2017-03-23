@@ -1,11 +1,12 @@
 package com.google.webserg.scala.functions
+
 import scala.io.Source
 
 /**
- * @author Sergiy Doroshenko
- * email:webserg@gmail.com
- * Date: 3/2/11 11:58 PM
- */
+  * @author Sergiy Doroshenko
+  *         email:webserg@gmail.com
+  *         Date: 3/2/11 11:58 PM
+  */
 
 object LongLines {
 
@@ -15,9 +16,9 @@ object LongLines {
       processLine(filename, width, line)
   }
 
-  private def processLine(filename: String,width: Int, line: String){
+  private def processLine(filename: String, width: Int, line: String) {
     if (line.length > width)
-        println(filename + ": " + line.trim)
+      println(filename + ": " + line.trim)
   }
 
 }

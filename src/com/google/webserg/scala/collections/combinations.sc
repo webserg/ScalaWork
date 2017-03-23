@@ -1,7 +1,7 @@
+package com.google.webserg.scala.collections
 object combinations {
-  println("Welcome to the Scala worksheet")       //> Welcome to the Scala worksheet
-
-  type Occurrences = List[(Char, Int)]
+  println("Welcome to the Scala worksheet")//> Welcome to the Scala worksheet
+    type Occurrences = List[(Char, Int)]
 
   val l: List[(Char, Int)] = List( ('a', 2), ('b', 2))
                                                   //> l  : List[(Char, Int)] = List((a,2), (b,2))
