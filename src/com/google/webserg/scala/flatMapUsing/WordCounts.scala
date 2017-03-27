@@ -17,4 +17,14 @@ object WordCounts extends App {
   println(list.groupBy(_._1))
   val res2 = list.groupBy(_._1).mapValues(_.map(_._2))
   println(res2)
+
+  val langs = List("1", "2", "3")
+  val wikis = List("21 123123 3453453 34534", "8787879696", "9695 687595", "22222", "33333", "222233 333333")
+
+  val invertedIndex = wikis.flatMap(w => {
+    val langsinWki = langs.filter(lang => w.contains(lang))
+    langsinWki.map(lang => (lang, w))
+  })
+  println(invertedIndex.groupBy(_._1))
+
 }
