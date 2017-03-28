@@ -34,24 +34,40 @@ object UseOptions extends App {
   def add1(x: Int): Int = x + 1
 
   //better have
-  val x:Option[Int] = Some(1+ 1)
+  val x: Option[Int] = Some(1 + 1)
   val y = x map (_ + 1) getOrElse 0
 
   println(y)
 
-  val ox = Some(1)
+  val ox:Option[Int] = Some(1)
   val oy = Some(2)
   val oz = Some(3)
+  val ow:Option[Int] = None
 
-  val res=  for { x <- ox; y <- oy; z <- oz }
+  val res0 = for {x <- ox; y <- oy; z <- oz}
     yield x + y + z
+
+  println("res0=" + res0)
+
+  for (s <- res0) println("res0=" + s)
+
+  val res = for {x <- ox; y <- oy; z <- oz;w <- ow}
+    yield x + y + z + w
 
   val oz1 = None
 
-  val res2 = for { z <- oz1 }
-    yield z
+  val res2 = for (z <- oz1)  yield z
 
   println(res)
   println(res2)
+
+  val smth = Some("smth")
+
+  for (s <- smth) {
+    println(s)
+  }
+  val nothing = None
+
+  for(s<-smth; n<-nothing) print(s + n)
 
 }
