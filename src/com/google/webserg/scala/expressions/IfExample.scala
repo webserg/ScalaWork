@@ -1,8 +1,8 @@
 package com.google.webserg.scala.expressions
 
 /**
- *  Scala's if can result in a value
- */
+  * Scala's if can result in a value
+  */
 
 object IfExample {
   def main(args: Array[String]) {
@@ -19,12 +19,12 @@ object IfExample {
     println(filename2)
     println(if (!args.isEmpty) args(0) else "default.txt")
 
-      val dogBreeds = List("Doberman", "Yorkshire Terrier", "Dachshund", "Scottish Terrier", "Great Dane", 
-  "Portuguese Water Dog")
+    val dogBreeds = List("Doberman", "Yorkshire Terrier", "Dachshund", "Scottish Terrier", "Great Dane",
+      "Portuguese Water Dog")
 
-  for(breed <- dogBreeds 
-        if breed.contains("Terrier");
-        if !breed.startsWith("Yorkshire")
-    ) println(breed) 
+    for (breed <- dogBreeds
+         if breed.contains("Terrier");
+         if !breed.startsWith("Yorkshire")
+    ) println(breed)
   }
 }

@@ -1,4 +1,5 @@
 package com.google.webserg.scala.ninetyNine
+
 // P01 (*) Find the last element of a list.
 //     Example:
 //     scala> last(List(1, 1, 2, 3, 5, 8))
@@ -14,7 +15,7 @@ package com.google.webserg.scala.ninetyNine
 //notation for a function that checks whether a value is greater than zero:
 //scala> someNumbers.filter(_ > 0)
 //res7: List[Int] = List(5, 10)
-object P01 extends App{
+object P01 extends App {
   // There are several ways to solve this problem.  If we use builtins, it's very
   // easy.
   def lastBuiltin[A](ls: List[A]): A = ls.last
@@ -24,9 +25,10 @@ object P01 extends App{
   def lastRecursive[A](ls: List[A]): A = ls match {
     case h :: Nil => h
     case _ :: tail => lastRecursive(tail)
-    case _  => throw new NoSuchElementException()  
+    case _ => throw new NoSuchElementException()
   }
+
   println(lastRecursive(List(1, 1, 2, 3, 5, 8)))
-  
+
 
 }

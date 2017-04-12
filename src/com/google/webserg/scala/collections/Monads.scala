@@ -58,21 +58,35 @@ object Monads extends App {
     order
   }
 
-  goodOrder flatMap { creditCheck } flatMap { stockCheck  } map process map save
+  goodOrder flatMap {
+    creditCheck
+  } flatMap {
+    stockCheck
+  } map process map save
   println("1==========================================================================")
-  badOrder flatMap { creditCheck  } flatMap { stockCheck  } map process map save
+  badOrder flatMap {
+    creditCheck
+  } flatMap {
+    stockCheck
+  } map process map save
   println("2==========================================================================")
 
   def addressValid(order: Order): MaybeOrder = {
     GoodOrder(order)
   }
 
-  goodOrder flatMap {  creditCheck  } flatMap {  stockCheck } flatMap { addressValid } map process map save
+  goodOrder flatMap {
+    creditCheck
+  } flatMap {
+    stockCheck
+  } flatMap {
+    addressValid
+  } map process map save
   println("3==========================================================================")
   for (o1 <- goodOrder;
-  o2 <- creditCheck(o1);
-  o3 <- stockCheck(o2);
-  o4 <- addressValid(o3)
+       o2 <- creditCheck(o1);
+       o3 <- stockCheck(o2);
+       o4 <- addressValid(o3)
   ) yield process(o4)
   println("4==========================================================================")
 }

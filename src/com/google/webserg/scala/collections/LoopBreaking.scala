@@ -15,13 +15,14 @@ object LoopBreaking extends App {
   println(sum3)
   //------------------------------------------------------------
   //if the iterable is of length 0, then it throws an exception
- //if the iterable is of length 1, then it returns the single element
- //if the iterable is of length 2+ then it stores 
+  //if the iterable is of length 1, then it returns the single element
+  //if the iterable is of length 2+ then it stores
   //the first element in a buffer, then repeatedly performs the
- // binary operation on the buffer and an iterable element, storing the results in the buffer.
+  // binary operation on the buffer and an iterable element, storing the results in the buffer.
   println((0 to 1000).reduceLeft(_ + _))
   //------------------------------------------------------------
   import scala.util.control.Breaks._
+
   var sum4 = 0
   breakable {
     for (i <- 0 to 1000) {
@@ -31,7 +32,7 @@ object LoopBreaking extends App {
   }
   //-------------------------------------------------------------
   var sum5 = 0
-  for (i <- 0 to 1000 ; if sum5<1000) sum5 += i
+  for (i <- 0 to 1000; if sum5 < 1000) sum5 += i
   println(sum5)
 
 }

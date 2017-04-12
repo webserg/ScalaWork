@@ -1,26 +1,28 @@
 package com.google.webserg.scala.collections
+
 /**
- * Filter
- * Create a new collection, keeping only the elements for which a filter method returns
- * true. The size of the new collection will be less than or equal to the size of the
- * original collection.
- * Map
- * Create a new collection where each element from the original collection is transformed
- * into a new value. Both the original collection and the new collection will
- * have the same size. (Not to be confused with the Map data structure.)
- * Fold
- * Starting with a “seed” value, traverse through the collection and use each element
- * to build up a new final value where each element from the original collection “contributes”
- * to the final value. An example is summing a list of integers.
- *
- * programming scala FP 59 (Scala for Comprehensions)
- */
+  * Filter
+  * Create a new collection, keeping only the elements for which a filter method returns
+  * true. The size of the new collection will be less than or equal to the size of the
+  * original collection.
+  * Map
+  * Create a new collection where each element from the original collection is transformed
+  * into a new value. Both the original collection and the new collection will
+  * have the same size. (Not to be confused with the Map data structure.)
+  * Fold
+  * Starting with a “seed” value, traverse through the collection and use each element
+  * to build up a new final value where each element from the original collection “contributes”
+  * to the final value. An example is summing a list of integers.
+  *
+  * programming scala FP 59 (Scala for Comprehensions)
+  */
 object collectionsPowerTools extends App {
 
   //It’s also possible to omit the dot (period) when calling a parameterless method or one
   //that takes only one argument	
 
   def isEven(n: Int) = (n % 2) == 0
+
   List(1, 2, 3, 4) filter isEven foreach println
 
   //Filtering
@@ -40,10 +42,14 @@ object collectionsPowerTools extends App {
   val lengths = stateCapitals map { kv => (kv._1, kv._2.length) }
   println(lengths)
 
-  val l1 = List(1, 2, 3, 4, 5) map { _ * 2 }
+  val l1 = List(1, 2, 3, 4, 5) map {
+    _ * 2
+  }
   println(l1)
 
-  val listmap = List(1, 2, 3, 4, 5).map({ _ * 2 })
+  val listmap = List(1, 2, 3, 4, 5).map({
+    _ * 2
+  })
   println("listmap:" + listmap)
 
   val mapmap = stateCapitals map { kv => (kv._1, kv._2.length) }
@@ -51,7 +57,9 @@ object collectionsPowerTools extends App {
   println("mapmap:" + mapmap)
   //==============================================================
   val foo = 1 to 5 toList
-  val foo2 = foo map { _ + 1 }
+  val foo2 = foo map {
+    _ + 1
+  }
   println("foo2 " + foo2)
 
   /*
@@ -77,17 +85,20 @@ object collectionsPowerTools extends App {
     case Nil => l
     case head :: tail => {
       println(l)
-      println("head= " +head +" tail="+tail)
+      println("head= " + head + " tail=" + tail)
       head :: removeDublicates(tail filter (_ != head))
     }
   }
+
   val l5 = List(4, 1, 2, 3, 4, 4, 4, 4, 88, 3, 0, 5, 6)
-  println(removeDublicates( List(1,2,3,4, 4)))
+  println(removeDublicates(List(1, 2, 3, 4, 4)))
 
   def removeDuplicates2[A](xs: List[A]): List[A] =
     if (xs.isEmpty) xs
-    else{ println(xs);
-    xs.head :: removeDuplicates2(xs.tail filter (x => x != xs.head))}
+    else {
+      println(xs);
+      xs.head :: removeDuplicates2(xs.tail filter (x => x != xs.head))
+    }
 
   def removeDuplicates3[A](xs: List[A]): List[A] =
     if (xs.isEmpty) xs

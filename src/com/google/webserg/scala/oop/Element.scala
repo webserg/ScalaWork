@@ -1,9 +1,9 @@
 package com.google.webserg.scala.oop
 
 /**
- * Created by sergiy.doroshenko
- * Date: 5/12/11 
- */
+  * Created by sergiy.doroshenko
+  * Date: 5/12/11
+  */
 /*
 we could have
 chosen to implement width and height as fields instead of methods, simply

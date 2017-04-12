@@ -17,7 +17,7 @@ object ForEx extends App {
   //--------------------------------------------
   val filesHere = (new java.io.File("./src/com/google/webserg/scala/expressions")).listFiles
   //for (file <- filesHere if file.getName.endsWith(".scala"))
-    //println(file)
+  //println(file)
   //------------------------------------------
 
   grep("package com.google.webserg.scala.expressions")

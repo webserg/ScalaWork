@@ -3,7 +3,7 @@ package com.google.webserg.scala.collections
 /**
   * Created by webse on 3/25/2017.
   */
-object listAvarageFunctional extends App{
+object listAvarageFunctional extends App {
 
   val list = List(9, 2, 3, 4, 5)
   val sum = list.reduce(_ + _)
@@ -14,10 +14,10 @@ object listAvarageFunctional extends App{
   }
 
   val listPair = list.map(x => (x, 1))
-  val res= listPair.reduce(f)
+  val res = listPair.reduce(f)
 
   println(res)
-  val (sumRes,lenRes) = res
-  println(sumRes/lenRes)
+  val (sumRes, lenRes) = res
+  println(sumRes / lenRes)
 
 }

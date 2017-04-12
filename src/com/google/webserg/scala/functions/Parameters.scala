@@ -1,4 +1,5 @@
 package com.google.webserg.scala.functions
+
 /*
  * called-by-value
  * sumOfSquares(3, 2+2)
@@ -24,10 +25,12 @@ Scala uses call-by-value by default, but it switches to call-by-name evaluation 
 parameter type is preceded by =>.
  */
 object Parameters extends App {
-  def square(x : Double) = x * x
-  def sumOfSquare(x:Double,y:Double) = square(x) + square(y)
-  
+  def square(x: Double) = x * x
+
+  def sumOfSquare(x: Double, y: Double) = square(x) + square(y)
+
   def loop: Int = loop
+
   def constOne(x: Int, y: => Int) = 1
 
   println(constOne(1, loop)) //1 called-by-name

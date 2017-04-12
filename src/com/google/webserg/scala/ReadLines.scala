@@ -1,9 +1,9 @@
 package com.google.webserg.scala
 
 /**
- * User: Sergiy Doroshenko
- * Date: Nov 15, 2010 11:31:12 PM
- */
+  * User: Sergiy Doroshenko
+  * Date: Nov 15, 2010 11:31:12 PM
+  */
 
 object ReadLines {
   def main(args: Array[String]) {

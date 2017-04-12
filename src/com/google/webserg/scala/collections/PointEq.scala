@@ -1,8 +1,8 @@
 package com.google.webserg.scala.collections
 
 /**
- * Created by webserg on 16.01.14.
- */
+  * Created by webserg on 16.01.14.
+  */
 class PointEq(var x: Int, var y: Int) extends Equals {
   def move(mx: Int, my: Int): Unit = {
     x = x + mx
@@ -19,6 +19,7 @@ class PointEq(var x: Int, var y: Int) extends Equals {
   override def equals(that: Any): Boolean = {
     def strictEquals(other: PointEq) =
       this.x == other.x && this.y == other.y
+
     that match {
       case a: AnyRef if this eq a => true
       case p: PointEq => (p canEqual this) && strictEquals(p)

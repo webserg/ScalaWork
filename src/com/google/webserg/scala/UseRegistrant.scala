@@ -1,4 +1,5 @@
 package com.google.webserg.scala
+
 import scala.io.Source._
 
 case class Registrant(line: String) {
@@ -10,18 +11,19 @@ case class Registrant(line: String) {
 }
 
 object UseRegistrant {
-  	def main(args: Array[String]) {
-  		
-  	println("start")
-	val data = """Bobb,Dobbs,bob@dobbs.com,25.00
+  def main(args: Array[String]) {
+
+    println("start")
+    val data =
+      """Bobb,Dobbs,bob@dobbs.com,25.00
 		Rocket J.,Squirrel,rocky@frostbite.com,0.00
 		Bullwinkle,Moose,bull@frostbite.com,0.25
 		Vim,Wibner,vim32@goomail.com,25.00"""
 
-	val lines = fromString(data).getLines
-	//val lines = fromString(data).getLines.toIndexedSeq
-	val registrants = lines.map(Registrant)
-	registrants.foreach(println)
-	//registrants.foreach(println)
-	}
+    val lines = fromString(data).getLines
+    //val lines = fromString(data).getLines.toIndexedSeq
+    val registrants = lines.map(Registrant)
+    registrants.foreach(println)
+    //registrants.foreach(println)
+  }
 }

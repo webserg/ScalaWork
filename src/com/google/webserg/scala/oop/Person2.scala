@@ -1,8 +1,8 @@
 package com.google.webserg.scala.oop
 
 /**
- * Created by webserg on 04.02.14.
- */
+  * Created by webserg on 04.02.14.
+  */
 class Person2(var firstName: String, var lastName: String) {
   println("the constructor begins")
   // some class fields

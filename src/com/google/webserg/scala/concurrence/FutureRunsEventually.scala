@@ -4,7 +4,7 @@ import scala.concurrent.{ExecutionContext,
 Future}
 import ExecutionContext.Implicits.global
 
-object FutureRunsEventually extends App{
+object FutureRunsEventually extends App {
   @volatile var totalA = 0
   val text = Future {
     "na" * 16 + "BATMAN!!!"

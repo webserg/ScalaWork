@@ -15,19 +15,19 @@ object FileMatcher {
       file <- filesHere;
       if file.getName.contains(query)
     ) yield file
-    
+
   def filesRegex(query: String) =
     for (
       file <- filesHere;
       if file.getName.matches(query)
     ) yield file
-    
+
   def main(args: Array[String]) {
     filesEnding(".scala").foreach(println(_))
     println("-----------------------------")
     filesContaining("Tupels").foreach(println(_))
     println("-----------------------------")
-    filesRegex("Tupels").foreach(println(_))  
-      
+    filesRegex("Tupels").foreach(println(_))
+
   }
 }

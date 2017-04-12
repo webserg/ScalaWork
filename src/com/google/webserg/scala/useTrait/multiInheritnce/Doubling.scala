@@ -1,18 +1,18 @@
 package com.google.webserg.scala.useTrait.multiInheritnce
 
 /**
- * Bluegarden
- * User: sedo
- * Date: 2/24/11
- *
-
- */
+  * Bluegarden
+  * User: sedo
+  * Date: 2/24/11
+  *
+  *
+  */
 /**
- * The Doubling trait has two funny things going on. The first is that it declares
-a superclass, IntQueue. This declaration means that the trait can only be
-mixed into a class that also extends IntQueue. Thus, you can mix Doubling
-into BasicIntQueue, but not into Rational.
- */
+  * The Doubling trait has two funny things going on. The first is that it declares
+  * a superclass, IntQueue. This declaration means that the trait can only be
+  * mixed into a class that also extends IntQueue. Thus, you can mix Doubling
+  * into BasicIntQueue, but not into Rational.
+  */
 trait Doubling extends IntQueue {
   abstract override def put(x: Int) {
     println("Doubling")

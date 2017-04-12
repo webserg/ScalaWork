@@ -40,9 +40,9 @@ NN is the number of parameters the function takes. Theres nothing magic at runti
 about functions. However, at compile time, there is plenty of syntactic sugar that makes
 the number of characters required to create a function very, very small.
    */
-  
-  def plus(a: Int, b: Int) = "Result is: "+(a + b)
-  
+
+  def plus(a: Int, b: Int) = "Result is: " + (a + b)
+
   /*
    *a function that takes two Ints and returns a String is the same as a function that
 takes an Int and returns a function that takes an Int and returns a String. Thus (Int, Int)
@@ -53,37 +53,39 @@ because some of the parameters are passed to the function rather than all the pa
 being applied to the function. Scala requires a separate syntax to automatically generate
 partially applied functions. 
    */
-  val p = (b: Int) => plus(42, b)// we?ve turned a method that takes two Int parameters into a function
-  
+  val p = (b: Int) => plus(42, b) // we?ve turned a method that takes two Int parameters into a function
+
   //that supplies the first parameter, in this case 42, but that needs a second Int parameter
   //to fulfill the requirements for the application of plus. In this case, p is a partial application of
   //plus, and we can complete the application by supplying an Int to p.
   println(p)
   println(p(1))
-  
+
   //It turns out that partial application of functions is a common thing. It allows you to
   //build up functions based on values in a given scope and allows for better code reuse. Scala
   //provides syntax to make it easier to build partially applied functions. Parameters can be
   //specified in different parenthesis groups:
-  
-  def add(a: Int)(b: Int) = "Result of add is: "+(a + b)
-  
-  println( add(1)(2) )
+
+  def add(a: Int)(b: Int) = "Result of add is: " + (a + b)
+
+  println(add(1)(2))
 
   //With this syntax, you can pass code
   //blocks as parameters separately from other parameters.
-  val res = add(1){
-	  val r = new java.util.Random
-	  r.nextInt(100)
+  val res = add(1) {
+    val r = new java.util.Random
+    r.nextInt(100)
   }
-  
-  println( res )
-  
-  val res2 = add(1){2+2}
-  
-  println( res2 )
 
-  println( w42(add(1)) ) //partially applied functions.
+  println(res)
+
+  val res2 = add(1) {
+    2 + 2
+  }
+
+  println(res2)
+
+  println(w42(add(1))) //partially applied functions.
   /*
   Note that the function _.equalsIgnoreCase(_) is passed as a curried parameter, in a separate set of (...).
   When you look into the Scaladoc, you will see that corresponds is declared as
@@ -93,9 +95,9 @@ partially applied functions.
   passed for p.
   */
   //carrien
-   if(Array("Hello", "World").corresponds(Array("hello", "world")) (_.equalsIgnoreCase(_)))
-      println("true")
-   else println("false")   
+  if (Array("Hello", "World").corresponds(Array("hello", "world"))(_.equalsIgnoreCase(_)))
+    println("true")
+  else println("false")
 
 
 }

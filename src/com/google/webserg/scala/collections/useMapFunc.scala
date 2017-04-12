@@ -9,9 +9,9 @@ object useMapFunc extends App {
   val votesByLang = votes groupBy { case (lang, _) => lang }
   println(votesByLang)
   val sumByLang = votesByLang map {
-    case (lang, counts) =>  val countsOnly = counts map { case (_, count) => count }
+    case (lang, counts) => val countsOnly = counts map { case (_, count) => count }
       println(countsOnly)
-    (lang, countsOnly.sum)
+      (lang, countsOnly.sum)
   }
   println(sumByLang)
   val orderedVotes = sumByLang.toSeq

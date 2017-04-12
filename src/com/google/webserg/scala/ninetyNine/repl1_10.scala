@@ -5,17 +5,25 @@ object repl1_10 extends App {
   def last(l: List[Int]) = {
     println(l.last)
   }
+
   last(List(1, 2, 3))
+
   //Find the last but one element of a list.
   //penultimate(List(1, 1, 2, 3, 5, 8)) => 5
-  def penultimate(l:List[Int]) = {
+  def penultimate(l: List[Int]) = {
     l.reverse.tail.head
-  } 
+  }
+
   assert(5 == penultimate(List(1, 1, 2, 3, 5, 8)))
-  
-  
-  object ::> { def unapply[A](l: List[A]) = Some((l.init, l.last)) }
-  List(1, 2, 3) match { case _ ::> last => println(last) }
+
+
+  object ::> {
+    def unapply[A](l: List[A]) = Some((l.init, l.last))
+  }
+
+  List(1, 2, 3) match {
+    case _ ::> last => println(last)
+  }
 
   //Find out whether a list is a palindrome. scala> isPalindrome(List(1, 2, 3, 2, 1))
   def listPat(list: List[Int]): Boolean = list match {

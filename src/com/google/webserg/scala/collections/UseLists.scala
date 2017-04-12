@@ -1,10 +1,10 @@
 package com.google.webserg.scala.collections
 
 /**
- * User: serg
- * Date: Nov 14, 2010
- * Time: 8:29:01 PM
- */
+  * User: serg
+  * Date: Nov 14, 2010
+  * Time: 8:29:01 PM
+  */
 /*
  * lists are immutable
  * lists are recursive while arrays are flat
@@ -33,7 +33,9 @@ object UseLists extends App {
   val result = for (elem <- a) yield 2 * elem
   // result is Array(4, 6, 10, 14, 22)
   println(result)
-  val res2 = a map { 2 * _ }
+  val res2 = a map {
+    2 * _
+  }
   println(res2)
 
   val dig3 = List(List(1, 2, 3), List(1, 2, 3), List(1, 2, 3))
@@ -55,9 +57,10 @@ object UseLists extends App {
   println(listMatch(a))
 
   println(listMatch(1 :: 2 :: 3 :: Nil))
+
   /**
-   * complesity is N * N
-   */
+    * complesity is N * N
+    */
   def isort(list: List[Int]): List[Int] = list match {
     case List() => list
     case x :: xs => insert(x, isort(xs))
@@ -67,6 +70,7 @@ object UseLists extends App {
     case List() => List(head)
     case x :: xs => if (head <= x) head :: ls else x :: insert(head, xs)
   }
+
   println(isort(18 :: 4 :: 9 :: 7 :: Nil))
 
   def last[T](list: List[T]): T = list match {
@@ -74,6 +78,7 @@ object UseLists extends App {
     case List(x) => x
     case y :: ys => last(ys)
   }
+
   //all elem f list except last one
   def init[T](list: List[T]): List[T] = list match {
     case List() => throw new Error("last element of list")
@@ -95,6 +100,7 @@ object UseLists extends App {
     def removeAt0[T](ys: List[T], count: Int): List[T] = ys match {
       case z :: zs => if (n == count) zs else z :: removeAt0(zs, count + 1)
     }
+
     if (xs.length < n) xs
     else removeAt0(xs, 0)
   }
@@ -121,6 +127,7 @@ object UseLists extends App {
       merge1(msort(fst), msort(snd))
     }
   }
+
   //uneffitiant
   def merge(xs: List[Int], ys: List[Int]): List[Int] =
     xs match {
@@ -133,6 +140,7 @@ object UseLists extends App {
             else y :: merge(xs, ys1)
         }
     }
+
   //more efficiant
   def merge1(xs: List[Int], ys: List[Int]): List[Int] = (xs, ys) match {
     case (List(), ys) => ys
@@ -152,12 +160,18 @@ object UseLists extends App {
         case (xs, Nil) => xs
         case (x :: xs1, y :: ys1) => if (lt(x, y)) x :: mergeParam(xs1, ys) else y :: mergeParam(xs, ys1)
       }
+
       val (fst, snd) = xs splitAt n
       mergeParam(msortParam(fst)(lt), msortParam(snd)(lt))
     }
   }
 
   println(msortParam(1 :: 12 :: 8 :: 4 :: 5 :: 6 :: 7 :: Nil)((x, y) => x < y))
-  
-  // List(('a', 2), ('b', 2), ('c', 1), ('d', 1), ('e', 1))('a', 2)
+
+  println(List(('a', 2), ('b', 2), ('c', 1), ('d', 1), ('e', 1)).map { case (key, value) => value })
+
+  println(List((1, 2), (1, 2), (1, 2)).map {
+    _._2
+  })
+  println(List((1, 2), (1, 2), (1, 2)).map { case (key, value) => value })
 }

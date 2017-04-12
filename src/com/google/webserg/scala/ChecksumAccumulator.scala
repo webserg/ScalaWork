@@ -1,11 +1,11 @@
 package com.google.webserg.scala
 
 /**
- * User: Sergiy Doroshenko
- * Date: Nov 17, 2010 5:43:17 PM
- */
+  * User: Sergiy Doroshenko
+  * Date: Nov 17, 2010 5:43:17 PM
+  */
 
-class ChecksumAccumulator{
+class ChecksumAccumulator {
   private var sum = 0
 
 
@@ -25,13 +25,13 @@ class ChecksumAccumulator{
 }
 
 /**
- * The singleton object in this figure is named ChecksumAccumulator, the
-same name as the class in the previous example. When a singleton object
-shares the same name with a class, it is called that class companion object.
-You must define both the class and its companion object in the same source
-file. The class is called the companion class of the singleton object. A class
-and its companion object can access each other’s private members.
- */
+  * The singleton object in this figure is named ChecksumAccumulator, the
+  * same name as the class in the previous example. When a singleton object
+  * shares the same name with a class, it is called that class companion object.
+  * You must define both the class and its companion object in the same source
+  *file. The class is called the companion class of the singleton object. A class
+  * and its companion object can access each other’s private members.
+  */
 object ChecksumAccumulator {
   private var cache = Map[String, Int]()
 

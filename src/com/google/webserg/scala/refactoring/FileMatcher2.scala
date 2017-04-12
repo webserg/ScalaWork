@@ -3,15 +3,15 @@ package com.google.webserg.scala.refactoring
 object FileMatcher2 {
 
   private def filesHere = (new java.io.File("c:\\scala\\ScalaWork\\src\\com\\google\\webserg\\scala")).listFiles
-  
+
   private def filesMatching(matcher: String => Boolean) =
     for (
       file <- filesHere;
       if matcher(file.getName)
     ) yield file
 
-    //_.endsWith(_) the same (fileName: String, query: String) => fileName.endsWith(query)
-    
+  //_.endsWith(_) the same (fileName: String, query: String) => fileName.endsWith(query)
+
   def filesEnding(query: String) =
     filesMatching(_.endsWith(query))
 
@@ -28,6 +28,6 @@ object FileMatcher2 {
     println("-----------------------------")
     filesRegex("%T%").foreach(println(_))
 
-    }
+  }
 
 }

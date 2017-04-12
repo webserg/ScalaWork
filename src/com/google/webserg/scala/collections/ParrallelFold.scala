@@ -16,13 +16,13 @@ object ParrallelFold extends App {
     }
   }
 
-//  def reduceSeg1[A](inp: Array[A], left: Int, right: Int, a0: A, f: (A, A) => A): A = {
-//
-//  }
-//
-//  def mapSeg[A, B](inp: Array[A], left: Int, right: Int, fi: (Int, A) => B, out: Array[B]): Unit = {
-//
-//  }
+  //  def reduceSeg1[A](inp: Array[A], left: Int, right: Int, a0: A, f: (A, A) => A): A = {
+  //
+  //  }
+  //
+  //  def mapSeg[A, B](inp: Array[A], left: Int, right: Int, fi: (Int, A) => B, out: Array[B]): Unit = {
+  //
+  //  }
 
   val list = List(1, 3, 8)
 

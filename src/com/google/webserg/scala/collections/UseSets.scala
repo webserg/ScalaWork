@@ -1,12 +1,12 @@
 package com.google.webserg.scala.collections
 
 /**
- * User: Sergiy Doroshenko
- * Date: Nov 15, 2010 1:14:10 PM
- */
+  * User: Sergiy Doroshenko
+  * Date: Nov 15, 2010 1:14:10 PM
+  */
 
 object UseSets {
-  def main(args : Array[String]){
+  def main(args: Array[String]) {
     //before use sets you need to choose between mutable and immutable
     //immutable predef collection.immutable.Set
     var jetSet = Set("Boeing", "Airbus")

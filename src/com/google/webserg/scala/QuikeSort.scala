@@ -1,7 +1,8 @@
 package com.google.webserg.scala
-object QuikeSort extends App{
 
-  def quickSort(values: Array[Int]) : Array[Int] = {
+object QuikeSort extends App {
+
+  def quickSort(values: Array[Int]): Array[Int] = {
 
     def swap(i1: Int, i2: Int) {
       val tmp = values(i1)
@@ -22,22 +23,25 @@ object QuikeSort extends App{
           i += 1;
           j -= 1
         }
-        values.foreach(print(_));println()
+        values.foreach(print(_));
+        println()
       }
       if (f < j) sort(f, j)
       if (j < l) sort(i, l)
     }
+
     sort(0, values.length - 1)
     values
   }
 
   //java style
-  def quickSort2(xs: Array[Int]): Array[Int]= {
+  def quickSort2(xs: Array[Int]): Array[Int] = {
     def swap(i: Int, j: Int) {
       val t = xs(i);
       xs(i) = xs(j);
       xs(j) = t
     }
+
     def sort1(l: Int, r: Int) {
       val pivot = xs((l + r) / 2)
       var i = l;
@@ -50,55 +54,59 @@ object QuikeSort extends App{
           i += 1
           j -= 1
         }
-        xs.foreach(print(_));println()
+        xs.foreach(print(_));
+        println()
       }
       if (l < j) sort1(l, j)
       if (j < r) sort1(i, r)
     }
-    sort1(0, xs.length - 1);xs
+
+    sort1(0, xs.length - 1);
+    xs
   }
-//  
-//  //java style
-//  def quickSort3(xs: Array[Int]): Array[Int]= {
-//    def swap(a:Array[Int],i: Int, j: Int) : Array[Int]{
-//      val t = xs(i);
-//      xs(i) = xs(j);
-//      xs(j) = t
-//    }
-//    def partitioning(a:Array[Int], pdx:Int, len:Int):Int = {
-//        val p = a(pdx);
-//        val i = pdx + 1;
-//        var j=pdx + 1;
-//        while (j <= len) {
-//            if (a[j] < p) {
-//                swap(a, j, i);
-//                i++;
-//            }
-//            j++;
-//        }
-//        swap(a, pdx, i - 1);
-//        return i - 1;
-//    }
-//    def sort1(a: Array[Int]) : Array[Int]{
-//      if (a.length == 1) a
-//      val pivot = 0
-//      var i = l;
-//      var j = r
-//      while (i <= j) {
-//        while (xs(i) < pivot) i += 1
-//        while (xs(j) > pivot) j -= 1
-//        if (i <= j) {
-//          swap(i, j)
-//          i += 1
-//          j -= 1
-//        }
-//        xs.foreach(print(_));println()
-//      }
-//      if (l < j) sort1(l, j)
-//      if (j < r) sort1(i, r)
-//    }
-//    sort1(0, xs.length - 1);xs
-//  }
+
+  //
+  //  //java style
+  //  def quickSort3(xs: Array[Int]): Array[Int]= {
+  //    def swap(a:Array[Int],i: Int, j: Int) : Array[Int]{
+  //      val t = xs(i);
+  //      xs(i) = xs(j);
+  //      xs(j) = t
+  //    }
+  //    def partitioning(a:Array[Int], pdx:Int, len:Int):Int = {
+  //        val p = a(pdx);
+  //        val i = pdx + 1;
+  //        var j=pdx + 1;
+  //        while (j <= len) {
+  //            if (a[j] < p) {
+  //                swap(a, j, i);
+  //                i++;
+  //            }
+  //            j++;
+  //        }
+  //        swap(a, pdx, i - 1);
+  //        return i - 1;
+  //    }
+  //    def sort1(a: Array[Int]) : Array[Int]{
+  //      if (a.length == 1) a
+  //      val pivot = 0
+  //      var i = l;
+  //      var j = r
+  //      while (i <= j) {
+  //        while (xs(i) < pivot) i += 1
+  //        while (xs(j) > pivot) j -= 1
+  //        if (i <= j) {
+  //          swap(i, j)
+  //          i += 1
+  //          j -= 1
+  //        }
+  //        xs.foreach(print(_));println()
+  //      }
+  //      if (l < j) sort1(l, j)
+  //      if (j < r) sort1(i, r)
+  //    }
+  //    sort1(0, xs.length - 1);xs
+  //  }
 
   //scala style
 
@@ -113,7 +121,8 @@ object QuikeSort extends App{
   • The result is obtained by appending the three sub-arrays together.
   */
   def quickSortScala(xs: Array[Int]): Array[Int] = {
-    xs.foreach(print(_));println()
+    xs.foreach(print(_));
+    println()
     if (xs.length <= 1) xs
     else {
       val pivot = xs(xs.length / 2)
@@ -125,19 +134,20 @@ object QuikeSort extends App{
     }
   }
 
-//  def main(args: Array[String]) {
+  //  def main(args: Array[String]) {
 
-    val arr = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
-    arr.foreach(print(_));
-    println()
-    quickSort(arr)
-    println("=====================")
-    val arr2 = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
-    quickSort(arr2)
-    println("=====================")
-    val arr3 = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
-    quickSortScala(arr3).foreach(print(_));println();
-    println("=====================")
-//  }
+  val arr = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
+  arr.foreach(print(_));
+  println()
+  quickSort(arr)
+  println("=====================")
+  val arr2 = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
+  quickSort(arr2)
+  println("=====================")
+  val arr3 = scala.util.Random.shuffle(List(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)).toArray
+  quickSortScala(arr3).foreach(print(_));
+  println();
+  println("=====================")
+  //  }
 
 }

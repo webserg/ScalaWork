@@ -39,10 +39,10 @@ object UseOptions extends App {
 
   println(y)
 
-  val ox:Option[Int] = Some(1)
+  val ox: Option[Int] = Some(1)
   val oy = Some(2)
   val oz = Some(3)
-  val ow:Option[Int] = None
+  val ow: Option[Int] = None
 
   val res0 = for {x <- ox; y <- oy; z <- oz}
     yield x + y + z
@@ -51,12 +51,12 @@ object UseOptions extends App {
 
   for (s <- res0) println("res0=" + s)
 
-  val res = for {x <- ox; y <- oy; z <- oz;w <- ow}
+  val res = for {x <- ox; y <- oy; z <- oz; w <- ow}
     yield x + y + z + w
 
   val oz1 = None
 
-  val res2 = for (z <- oz1)  yield z
+  val res2 = for (z <- oz1) yield z
 
   println(res)
   println(res2)
@@ -68,6 +68,6 @@ object UseOptions extends App {
   }
   val nothing = None
 
-  for(s<-smth; n<-nothing) print(s + n)
+  for (s <- smth; n <- nothing) print(s + n)
 
 }

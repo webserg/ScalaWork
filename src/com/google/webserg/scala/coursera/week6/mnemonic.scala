@@ -9,8 +9,11 @@ object mnemonic extends App {
     val pn = "7225247386"
     List(pn)
   }
+
   val pn = "7225247386"
   val res = "Scala is fun"
-  def charCode: Map[Char, Char] = for ((k, v) <- mnemonic ; c <-v ) yield (c, k)
+
+  def charCode: Map[Char, Char] = for ((k, v) <- mnemonic; c <- v) yield (c, k)
+
   println(charCode)
 }
