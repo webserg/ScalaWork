@@ -33,10 +33,12 @@ object UseLists extends App {
   val result = for (elem <- a) yield 2 * elem
   // result is Array(4, 6, 10, 14, 22)
   println(result)
-  val res2 = a map {
-    2 * _
-  }
+  val res2 = a map {  2 * _ }
   println(res2)
+
+  val result3 = for (elem <- a if elem > 4; if elem!=5) yield 2 * elem
+   //result is Array(10, 14, 22)
+  println(result3)
 
   val dig3 = List(List(1, 2, 3), List(1, 2, 3), List(1, 2, 3))
   val n: List[Nothing] = List()
@@ -122,7 +124,6 @@ object UseLists extends App {
     val n = xs.length / 2
     if (n == 0) xs
     else {
-
       val (fst, snd) = xs splitAt n
       merge1(msort(fst), msort(snd))
     }
@@ -174,4 +175,61 @@ object UseLists extends App {
     _._2
   })
   println(List((1, 2), (1, 2), (1, 2)).map { case (key, value) => value })
+
+
+  def squareList(xs: List[Int]): List[Int] =
+    xs match {
+      case Nil => List()
+      case y :: ys => y * y :: squareList(ys)
+    }
+
+  println(squareList(List(1, 2, 3, 4, 5)))
+
+  def squareListMap(xs: List[Int]): List[Int] = xs map { x => x * x }
+
+  println(squareListMap(List(1, 2, 3, 4, 5)))
+
+  def posElems(xs: List[Int]): List[Int] = xs match {
+    case Nil => xs
+    case y :: ys => if (y > 3) y :: posElems(ys) else posElems(ys)
+  }
+
+  def posElemsFilter(xs: List[Int]): List[Int] = xs filter (x => x > 3)
+
+
+  println(posElems(List(1, 2, 3, 4, 5)))
+  println(posElemsFilter(List(1, 2, 3, 4, 5)))
+
+  def pack[T](xs: List[T]): List[List[T]] = xs match {
+    case Nil => Nil
+    case x :: xs1 => xs.takeWhile(y => y == x) :: pack(xs1.dropWhile(y => y == x))
+  }
+
+  println(pack(List("a", "a", "a", "b", "c", "c", "a")))
+  assert(pack(List("a", "a", "a", "b", "c", "c", "a")) == List(List("a", "a", "a"), List("b"), List("c", "c"), List("a")))
+
+  def pack2[T](xs: List[T]): List[List[T]] = xs match {
+    case Nil => Nil
+    case x :: xs1 => val (first, rest) = xs.span(y => y == x)
+      first :: pack2(rest)
+  }
+
+  println(List("a", "a", "a", "b", "c", "c", "a").span(s => s == "a"))
+
+  def encode[T](xs: List[T]): List[(T, Int)] = xs match {
+    case Nil => Nil
+    case x :: xs1 => val (first: List[T], rest) = xs.span(y => y == x)
+      (x, first.size) :: encode(rest)
+  }
+
+  println(encode(List("a", "a", "a", "b", "c", "c", "a")))
+  assert(encode(List("a", "a", "a", "b", "c", "c", "a")) == List(("a", 3), ("b", 1), ("c", 2), ("a", 1)))
+
+
+  def encodeMap[T](xs: List[T]): List[(T, Int)] = pack(xs) map { ys => (ys.head, ys.size) }
+
+  println(encodeMap(List("a", "a", "a", "b", "c", "c", "a")))
+  assert(encodeMap(List("a", "a", "a", "b", "c", "c", "a")) == List(("a", 3), ("b", 1), ("c", 2), ("a", 1)))
+
+
 }
