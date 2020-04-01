@@ -22,5 +22,14 @@ object FoldleftUse extends App {
   println(List("How", "long", "is", "everyone?").foldLeft(0) { (i, s) => i max s.length })
   val what = "awesome"
   //println(s"string interpolation is ${what.toUpperCase}!")
+  //  val num:Int = null
+  val num: Int = 0
+  val l: List[Int] = num :: List(1, 2, 3, 4, 5, 6, 7, 8, 9)
+  println(List(1, 2, 3, 4).max)
+  println(l.max)
+  //  println(List[Int]().max)
+  val n = 3
+  println(List(1, 2, 90, 4, 5, 6, 7, 8, 9).filter(v => v < n).minBy(v => math.abs(v - n)))
+  println(List(1, 2, 90, 4, 5, 6, 7, 8, 9).filter(v => v > n).minBy(v => math.abs(v - n)))
 
 }
